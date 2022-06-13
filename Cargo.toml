@@ -1,0 +1,19 @@
+[package]
+name = "quiet-proxy"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+httparse = "1.7"
+tokio = { version = "1", features = ["rt-multi-thread", "net", "macros", "fs", "io-util", "sync"]}
+bytes = "1"
+http = "0.2"
+itoa = "1"
+chashmap = "2"
+clap = { version = "3", features = ["derive", "env"] }
+cfg-if = "1"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
